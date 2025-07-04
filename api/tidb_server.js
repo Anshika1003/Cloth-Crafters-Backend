@@ -6,6 +6,10 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');  // To read the CA certificate
 
+
+require('dotenv').config();
+
+
 const app = express();
 app.use(express.json());
 
@@ -31,7 +35,7 @@ const pool = mysql.createPool({
     password: process.env.DB_PASSWORD,  // TiDB Password
     database: process.env.DB_NAME,  // Database name
     ssl: {
-        ca: process.env.SSL_CA_CERT  // Path to your CA certificate
+        ca: fs.readFileSync(process.env.SSL_CA_CERT) // Path to your CA certificate
     },
     connectionLimit: 10,  // Adjust the connection limit as per your need
 });
@@ -47,6 +51,7 @@ const query = (sql, params) => new Promise((resolve, reject) => {
 // Test the TiDB Cloud connection
 pool.getConnection((err, connection) => {
     if (err) {
+        console.log("CA Loaded:", fs.existsSync(process.env.SSL_CA_CERT)); // should return true
         console.error('Error connecting to TiDB Cloud:', err.message);
         return;
     }
@@ -258,12 +263,6 @@ app.delete('/customize_clothes/:email', async (req, res) => {
         res.status(500).json({ error: 'An unexpected error occurred. Please try again later.' });
     }   
 });
-
-
-
-
-
-
 
 
 //get api for alter_clothes
