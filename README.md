@@ -17,15 +17,25 @@ This is the **Node.js + Express.js** backend for **Cloth Crafters**, a modern ta
 ## 📁 Project Structure
 Cloth-Crafters-Backend/
 ├── config/ # Database connection
+
 ├── controllers/ # All route handlers grouped by feature
+
 ├── routes/ # Express route definitions
+
 ├── middleware/ # JWT & multer middleware
+
 ├── uploads/ # Folder to store uploaded images
+
 ├── certificate/ # TiDB Cloud CA certificate
+
 ├── app.js # Express app
+
 ├── server.js # Entry point
+
 ├── .env # Environment variables
+
 ├── package.json
+
 └── README.md
 
 
