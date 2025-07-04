@@ -67,13 +67,21 @@ npm install
 ### 3. **Create .env File**
 
 DB_HOST=your_tidb_host
+
 DB_PORT=4000
+
 DB_USER=youruser.root
+
 DB_PASSWORD=yourpassword
+
 DB_NAME=clothcrafters
+
 SSL_CA_CERT=./certificate/tidbcloud-server-ca.pem
+
 JWT_SECRET=your_jwt_secret
-✅ Download the CA cert from TiDB Cloud → Connect → Download CA → save as certificate/tidbcloud-server-ca.pem
+
+✅ Download the CA cert from TiDB Cloud → Connect → Download CA → save as
+certificate/tidbcloud-server-ca.pem
 
 ### 4. *Start the Server*
 npm start
@@ -82,15 +90,24 @@ Server will start on: http://localhost:4000/
 
 ## 📡 API Routes Overview
 Route Prefix	        Description
+
 /api/auth	            User registration and login
+
 /api/users	            Profile management and image upload
+
 /api/measurements	    Add/update/get measurements
+
 /api/alter_clothes	    Alteration request with image
+
 /api/customize_clothes	Submit clothing customizations
+
 /api/products	        View products and fabrics
+
 /api/cart	            Add/view/clear cart
+
 /api/vacancy	        Vacancy posting and applications
 
 
 🧵 Built With ❤️ for Tailors, Designers & Boutiques
+
 Crafted by Anshika Sharma
